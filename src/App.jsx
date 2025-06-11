@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import { MainContent } from './components/MainContent'
 
 function App() {
 
   return (
     <>
-      <h1>Working</h1>
+      <MainContent/>
     </>
   )
 }

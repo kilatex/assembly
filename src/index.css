@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+body{
+  background-color: #212121;
+  color: white;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 0px 50px;
+}
+
+.header--game{
+  text-align: center;
+}
+
+.header--game p{
+   color: #ccc;
+    padding: 10px 20%;
+}
+
+.alert--game{
+  background-color: #129f51;
+  font-size: 24px;
+  font-weight: 500;
+  width: 20rem;
+  text-align: center;
+  border-radius: 5px;
+  margin: 20px 0px;
+}
+.alert--game p {
+  padding: 5px;
+}
+.languages--container{
+  margin: 0 auto;
+}
+
+.languages--container ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  
+  padding: 0;
+}
+.languages--container ul li{
+  padding: 10px 5px;
+  border-radius: 3px;
+}
+
+
+/* Modern keyboard styles */
+.keyboard--container {
+  background: #de9d26;
+  padding: 24px 18px 18px 18px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0004;
+  display: inline-block;
+  margin: 32px auto 0 auto;
+}
+
+.keyboard--row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.keyboard--key {
+  background: #de9d26;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  margin: 0 6px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 48px;
+  height: 56px;
+  box-shadow: 0 2px 8px #0002;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+  outline: none;
+}
+
+.keyboard--key:active,
+.keyboard--key:focus {
+  background: #c4881f;
+  color: #fff;
+  transform: scale(0.97);
+}
+
+.keyboard--key:hover {
+  background: #eab94e;
+  color: #000;
+}
