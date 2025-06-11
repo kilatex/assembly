@@ -17,7 +17,7 @@ export const MainContent = () => {
             <Languages/>
             <Keyboard/>
 
-
+            <button className='new--game--button'>New Game</button>
 
 
 

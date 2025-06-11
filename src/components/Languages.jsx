@@ -8,7 +8,7 @@ export const Languages = () => {
                 <ul>
                     {
                         languagesList.map(language => (
-                            <li
+                            <li key={language.id}
                                 style={{
                                     color: language.color,
                                     background: language.background
