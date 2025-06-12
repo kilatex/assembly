@@ -30,7 +30,7 @@ export const MainContent = () => {
     const buttonNewGame = () => {
         if(hasLost || hasWon){
             return (
-                            <button onClick={newGame} className='new--game--button'>New Game</button>
+            <button onClick={newGame} className='new--game--button'>New Game</button>
             )
         }else{
             return ''
@@ -54,11 +54,7 @@ export const MainContent = () => {
                 setGuessedLetters={setGuessedLetters}
                 currentWord={currentWord}
             />
-
             {buttonNewGame()}
-
-
-
         </>
     )
   
