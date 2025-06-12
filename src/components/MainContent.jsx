@@ -4,10 +4,11 @@ import { Languages } from './Languages'
 import { Keyboard } from './Keyboard'
 
 export const MainContent = () => {
-
+    const wordList = ["REACT", "JAVASCRIPT", "PYTHON", "ASSEMBLY", "NODE", "LINUX"];
+    const getRandomWord = () => wordList[Math.floor(Math.random() * wordList.length)];
     // In MainContent.jsx
     const [guessedLetters, setGuessedLetters] = useState([]);
-    const [currentWord, setCurrentWord] = useState("YOURWORD".toUpperCase());
+    const [currentWord, setCurrentWord] = useState(getRandomWord().toUpperCase());
 
     // Calculate incorrect guesses here
     const incorrectGuesses = guessedLetters.filter(
@@ -18,13 +19,24 @@ export const MainContent = () => {
     letter => guessedLetters.includes(letter)
     );
 
-    
+    const hasLost = incorrectGuesses > 8  ? true : false;
+
     const newGame = () => {
         setGuessedLetters([]);
+        setCurrentWord(getRandomWord());
     }
 
 
-    const hasLost = incorrectGuesses > 8  ? true : false;
+    const buttonNewGame = () => {
+        if(hasLost || hasWon){
+            return (
+                            <button onClick={newGame} className='new--game--button'>New Game</button>
+            )
+        }else{
+            return ''
+        }
+    }
+
     return (
         <>
             <header className='header--game'>
@@ -43,7 +55,7 @@ export const MainContent = () => {
                 currentWord={currentWord}
             />
 
-            <button onClick={newGame} className='new--game--button'>New Game</button>
+            {buttonNewGame()}
 
 
 
