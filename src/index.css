@@ -120,7 +120,14 @@ body{
   background: #eab94e;
   color: #000;
 }
-
+.keyboard--key.key--correct {
+    background: #22c55e !important; /* green */
+    color: #fff !important;
+}
+.keyboard--key.key--wrong {
+    background: #ef4444 !important; /* red */
+    color: #fff !important;
+}
 .new--game--button{
   margin: 20px auto;
   padding: 10px 40px;
