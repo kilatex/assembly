@@ -17,6 +17,13 @@ export const MainContent = () => {
     const hasWon = [...new Set(currentWord.toUpperCase())].every(
     letter => guessedLetters.includes(letter)
     );
+
+    
+    const newGame = () => {
+        setGuessedLetters([]);
+    }
+
+
     const hasLost = incorrectGuesses > 8  ? true : false;
     return (
         <>
@@ -36,7 +43,7 @@ export const MainContent = () => {
                 currentWord={currentWord}
             />
 
-            <button className='new--game--button'>New Game</button>
+            <button onClick={newGame} className='new--game--button'>New Game</button>
 
 
 
