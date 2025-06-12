@@ -7,11 +7,11 @@ const keys = [
 const flatKeys = keys.flat()
 const keysPressed = [];
 
-export const Keyboard = ({ onKeyPress }) => {
-    const [currentWord, setCurrentWord] = useState('Messi')
-    const [guessedLetters, setGuessedLetters] = useState([]);
+export const Keyboard = ({hasWon, hasLost, onKeyPress, guessedLetters, setGuessedLetters, currentWord }) => {
 
+  
     const handleKeyClick = (key) => {
+        if (hasWon || hasLost) return; // Prevent further guesses
         setGuessedLetters(prevLetters =>
             prevLetters.includes(key)
                 ? prevLetters
@@ -30,10 +30,9 @@ export const Keyboard = ({ onKeyPress }) => {
     ));
 }
     // Listen for physical keyboard presses
+ 
     useEffect(() => {
-        console.log('Guessed letters:', guessedLetters);
-    }, [guessedLetters]);
-    useEffect(() => {
+        if (hasWon || hasLost) return; // Prevent further guesses
         const handleKeyDown = (e) => {
             const key = e.key.toUpperCase()
             if (flatKeys.includes(key)) {
@@ -42,10 +41,9 @@ export const Keyboard = ({ onKeyPress }) => {
         }
         window.addEventListener('keydown', handleKeyDown)
         return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [])
+    }, [hasWon, hasLost])
 
     return (
-
         <>
             <div className='word--display'>
                 <h2>{renderCurrentWord()}</h2>
@@ -74,6 +72,5 @@ export const Keyboard = ({ onKeyPress }) => {
                 ))}
             </div>
         </>
-
     )
 }

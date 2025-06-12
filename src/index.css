@@ -26,7 +26,6 @@ body{
 }
 
 .alert--game{
-  background-color: #129f51;
   font-size: 24px;
   font-weight: 500;
   width: 20rem;
@@ -120,14 +119,17 @@ body{
   background: #eab94e;
   color: #000;
 }
-.keyboard--key.key--correct {
+
+.keyboard--key.key--correct, .alert--win{
     background: #22c55e !important; /* green */
     color: #fff !important;
 }
-.keyboard--key.key--wrong {
+
+.keyboard--key.key--wrong, .alert--lost {
     background: #ef4444 !important; /* red */
     color: #fff !important;
 }
+
 .new--game--button{
   margin: 20px auto;
   padding: 10px 40px;
