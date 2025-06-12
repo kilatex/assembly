@@ -1,6 +1,6 @@
 import React from 'react'
-
-export const Alert = ({ hasWon, hasLost }) => {
+import {getFarewellText} from '../assets/utils'
+export const Alert = ({killedLanguageName, hasWon, hasLost,isCorrectLastPressed }) => {
 
   const showMessage = (alertInfo) => {
     return(
@@ -28,8 +28,13 @@ export const Alert = ({ hasWon, hasLost }) => {
       message2 : `Well Done \u{1F389}`
     }
     return showMessage(wonAlert);
-  }else {
-    return ''
+  }else if(!isCorrectLastPressed){
+     const killedAlert = {
+      class: 'alert--game alert--killed',
+      message1 : getFarewellText(killedLanguageName),
+      message2 : '' 
+    }
+    return showMessage(killedAlert)
   }
 
 

@@ -7,14 +7,15 @@ const keys = [
 const flatKeys = keys.flat()
 const keysPressed = [];
 
-export const Keyboard = ({hasWon, hasLost, onKeyPress, guessedLetters, setGuessedLetters, currentWord }) => {
+export const Keyboard = ({setLastPressed,hasWon, hasLost, onKeyPress, guessedLetters, setGuessedLetters, currentWord }) => {
 
-  
+
     const handleKeyClick = (key) => {
         if (hasWon || hasLost) return; // Prevent further guesses
+        setLastPressed(key);
         setGuessedLetters(prevLetters =>
             prevLetters.includes(key)
-                ? prevLetters
+                ? prevLetters 
                 : [...prevLetters, key]
         );
         if (onKeyPress) onKeyPress(key);

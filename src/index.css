@@ -146,6 +146,7 @@ body{
   to { opacity: 1; transform: scale(1);}
 }
 
+
 .alert--game {
   animation: fadeIn 0.5s ease;
   transition: background 0.3s;
