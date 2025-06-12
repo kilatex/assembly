@@ -8,7 +8,7 @@ const flatKeys = keys.flat()
 const keysPressed = [];
 
 export const Keyboard = ({ onKeyPress }) => {
-    const [currentWord, setCurrentWord] = useState('REACT')
+    const [currentWord, setCurrentWord] = useState('Messi')
     const [guessedLetters, setGuessedLetters] = useState([]);
 
     const handleKeyClick = (key) => {
@@ -22,12 +22,13 @@ export const Keyboard = ({ onKeyPress }) => {
 
 
 
-    const renderCurrentWord = () => {
-        const wordToRender = currentWord.split("")
-        return wordToRender.map((letter, idx) => (
-            <span key={idx}>{letter.toUpperCase()}</span>
-        ));
-    }
+  const renderCurrentWord = () => {
+    return currentWord.split("").map((letter, idx) => (
+        <span key={idx}>
+            {guessedLetters.includes(letter.toUpperCase()) ? letter.toUpperCase() : "_"}
+        </span>
+    ));
+}
     // Listen for physical keyboard presses
     useEffect(() => {
         console.log('Guessed letters:', guessedLetters);
