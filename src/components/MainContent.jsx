@@ -19,7 +19,7 @@ export const MainContent = () => {
     letter => guessedLetters.includes(letter)
     );
 
-    const hasLost = incorrectGuesses > 8  ? true : false;
+    const hasLost = incorrectGuesses > 7  ? true : false;
 
     const newGame = () => {
         setGuessedLetters([]);

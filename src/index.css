@@ -200,3 +200,72 @@ body{
   opacity: 1;
   animation: fadeIn 0.4s;
 }
+
+/* RESPONSIVE STYLESS */
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .word--display h2 {
+    font-size: 2.5rem;
+    gap: 1px;
+  }
+  .keyboard--key {
+    width: 38px;
+    height: 44px;
+    font-size: 1.1rem;
+    margin: 0 3px;
+  }
+  .alert--game {
+    width: 90vw;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  #root {
+    padding: 0 5px;
+  }
+  .header--game h1 {
+    font-size: 1.5rem;
+  }
+  .header--game p {
+    padding: 10px 5px;
+    font-size: 1rem;
+  }
+  .word--display h2 {
+    font-size: 1.3rem;
+    gap: 0;
+  }
+  .word--display h2 span {
+    padding: 3px 10px;
+    font-size: 3rem;
+  }
+  .keyboard--container {
+    padding: 10px 2px 8px 2px;
+    border-radius: 10px;
+  }
+  .keyboard--key {
+    width: 34px;
+    height: 38px;
+    font-size: 0.9rem;
+    margin: 0 1px;
+    border-radius: 4px;
+    padding: 0;
+  }
+  .alert--game {
+    width: 98vw;
+    font-size: 16px;
+    padding: 8px 2px;
+  }
+  .new--game--button {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+  .languages--container ul {
+    gap: 4px;
+  }
+  .languages--container ul li {
+    padding: 6px 2px;
+    font-size: 0.9rem;
+  }
+}

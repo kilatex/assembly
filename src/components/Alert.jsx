@@ -17,7 +17,7 @@ export const Alert = ({ hasWon, hasLost }) => {
     const lostALert = {
       class: 'alert--game alert--lost',
       message1 : 'You Loose!',
-      message2 : `Try Again 🔄 ` 
+      message2 : `Better start learning Assembly 😢 ` 
     }
     return showMessage(lostALert)
 
