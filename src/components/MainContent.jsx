@@ -3,12 +3,13 @@ import { Alert } from './Alert'
 import { Languages } from './Languages'
 import { Keyboard } from './Keyboard'
 import { languagesList } from '../assets/languages';
+import Confetti from 'react-confetti';
 export const MainContent = () => {
     const wordList = ["REACT", "JAVASCRIPT", "PYTHON", "ASSEMBLY", "NODE", "LINUX"];
     const getRandomWord = () => wordList[Math.floor(Math.random() * wordList.length)];
     // In MainContent.jsx
     const [guessedLetters, setGuessedLetters] = useState([]);
-    const [currentWord, setCurrentWord] = useState(getRandomWord().toUpperCase());
+    const [currentWord, setCurrentWord] = useState(() => getRandomWord().toUpperCase());
     // Calculate incorrect guesses here
     const incorrectGuesses = guessedLetters.filter(
         letter => !currentWord.includes(letter)
@@ -42,6 +43,7 @@ export const MainContent = () => {
 
     return (
         <>
+            {hasWon && <Confetti/>}
             <header className='header--game'>
                 <h1>Assembly: Endgame</h1>
                 <p>Guess the word in under 8 attempts to keep the programming world safe

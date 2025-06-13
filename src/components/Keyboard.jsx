@@ -23,11 +23,15 @@ export const Keyboard = ({hasWon, hasLost, onKeyPress, guessedLetters, setGuesse
 
 
   const renderCurrentWord = () => {
-    return currentWord.split("").map((letter, idx) => (
-        <span key={idx}>
-            {guessedLetters.includes(letter.toUpperCase()) ? letter.toUpperCase() : "_"}
+    return currentWord.split("").map((letter, idx) => {
+        const isAllowedtToSHow = guessedLetters.includes(letter.toUpperCase()) || hasLost;
+        const wasNotGuessed = !guessedLetters.includes(letter.toUpperCase())  && hasLost;
+        return (
+        <span key={idx} className={wasNotGuessed ? ' not--guessed' :  ''}>
+            {isAllowedtToSHow ? letter.toUpperCase() : "_"}
         </span>
-    ));
+    )
+    });
 }
     // Listen for physical keyboard presses
  
@@ -60,6 +64,7 @@ export const Keyboard = ({hasWon, hasLost, onKeyPress, guessedLetters, setGuesse
                         } 
                         return (
                             <button
+                            disabled={hasWon || hasLost }
                             className={keyClass}
                             key={key}
                             onClick={() => handleKeyClick(key)}

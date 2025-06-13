@@ -66,7 +66,6 @@ body{
 }
 .word--display h2 span{
     border-radius: 3px;
-
     padding: 5px 15px;
     height: 100%;
     background-color: #323232;
@@ -201,6 +200,9 @@ body{
   opacity: 1;
   animation: fadeIn 0.4s;
 }
+span.not--guessed{
+  background: #ef4444 !important;
+}
 
 /* RESPONSIVE STYLESS */
 
@@ -223,6 +225,9 @@ body{
 }
 
 @media (max-width: 600px) {
+  .word--display{
+    margin: 30px 0px;
+  }
   #root {
     padding: 0 5px;
   }
@@ -244,6 +249,7 @@ body{
   .keyboard--container {
     padding: 10px 2px 8px 2px;
     border-radius: 10px;
+    
   }
   .keyboard--key {
     width: 34px;
