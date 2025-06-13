@@ -276,3 +276,19 @@ span.not--guessed{
     font-size: 0.9rem;
   }
 }
+
+.anti-confetti {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 9999;
+}
+.rain-emoji {
+  position: absolute;
+  top: -2em;
+  font-size: 2em;
+  animation: rain-fall 2.5s linear infinite;
+}
+@keyframes rain-fall {
+  to { top: 110vh; }
+}
