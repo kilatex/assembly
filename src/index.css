@@ -125,7 +125,7 @@ body{
     color: #fff !important;
 }
 
-.keyboard--key.key--wrong, .alert--lost {
+.keyboard--key.key--wrong, .alert--lost, .alert--killed {
     background: #ef4444; /* red */
     color: #fff;
 }

@@ -9,7 +9,6 @@ export const MainContent = () => {
     // In MainContent.jsx
     const [guessedLetters, setGuessedLetters] = useState([]);
     const [currentWord, setCurrentWord] = useState(getRandomWord().toUpperCase());
-    const [lastPressed,setLastPressed] = useState(currentWord);
     // Calculate incorrect guesses here
     const incorrectGuesses = guessedLetters.filter(
         letter => !currentWord.includes(letter)
@@ -22,8 +21,9 @@ export const MainContent = () => {
     letter => guessedLetters.includes(letter)
     );
     const hasLost = incorrectGuesses > 7  ? true : false;
-
-    const isCorrectLastPressed = currentWord.includes(lastPressed);
+    
+    const lastGuess = guessedLetters[guessedLetters.length - 1 ];
+    const isCorrectLastPressed = lastGuess ?  currentWord.includes(lastGuess) : true ;
     const newGame = () => {
         setGuessedLetters([]);
         setCurrentWord(getRandomWord());
@@ -62,7 +62,6 @@ export const MainContent = () => {
                 guessedLetters={guessedLetters}
                 setGuessedLetters={setGuessedLetters}
                 currentWord={currentWord}
-                setLastPressed= {setLastPressed}
             />
             {buttonNewGame()}
         </>

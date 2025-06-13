@@ -28,7 +28,7 @@ export const Alert = ({killedLanguageName, hasWon, hasLost,isCorrectLastPressed 
       message2 : `Well Done \u{1F389}`
     }
     return showMessage(wonAlert);
-  }else if(!isCorrectLastPressed){
+  }else if(isCorrectLastPressed == false){
      const killedAlert = {
       class: 'alert--game alert--killed',
       message1 : getFarewellText(killedLanguageName),
